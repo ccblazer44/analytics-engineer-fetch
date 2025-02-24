@@ -69,3 +69,37 @@ Highlighted in data_quality.sql, we are missing or not matching on key data poin
 Based on the questions from Section 2 and what I implicitly perceive to be the real marketable value of data like this, we need to find a way to reliably connect users’ receipt data with brands—this is what advertisers and clients would want. If increasing the integrity of the connecting data points is not possible, an AI-driven approach (such as text-matching rewards_group to brand_code) could be a way forward.
 
 
+## 4. Communicate with Stakeholders
+
+
+## 4. Communicating with Stakeholders
+
+**Subject:** Key Data Quality Issue - Receipt to Brand Matching  
+
+Hi [STAKEHOLDER],  
+
+In reviewing the data, I found what I believe to be the key data quality issue: reliably connecting receipt items to brands. A significant number of receipt items are either missing barcode data or have barcodes that do not match known brands. This impacts our ability to analyze brand-level spend and trends. Below is a high-level look at the questions you sent my way:  
+
+- **What questions do you have about the data?**  
+  - What percentage of receipt items should we expect to have a matching brand based on barcode?  
+
+- **How did you discover the data quality issues?**  
+  - I loaded the data into PostgreSQL using Python and then explored it from there.  
+  - I investigated each dataset individually and how it connected to other tables.  
+
+- **What do you need to know to resolve the data quality issues?**  
+  - If barcode matching is unreliable, what other ways can we reliably link receipt items to brands?  
+
+- **What other information would you need to help you optimize the data assets you're trying to create?**  
+  - Is there an external product catalog or historical mapping we can use to backfill missing barcode-brand relationships?  
+
+- **What performance and scaling concerns do you anticipate in production and how do you plan to address them?**  
+  - Query performance will be significantly impacted if barcode data is missing or unreliable, as text-based matching between receipts and brands is much slower.  
+  - Ensuring strong barcode integrity will improve performance.  
+  - Further optimizations like indexing barcode and precomputing brand mappings in a summary table would help at scale.  
+
+I’d be more than happy to drill down on any of this, or explore other aspects of the data, whenever you’d like. Let me know how you'd like to proceed!  
+
+Thanks,  
+-- Chris Blazer
+
