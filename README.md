@@ -9,7 +9,7 @@ The following diagram represents the structured relational data model designed b
 
 [![Database Schema](diagram.png)](diagram.png)
 
-## SQL Queries
+## 2. SQL Queries
 
 Before I went about answering the questions, I dove into the data and did some minor cleanup.  You can see how I explored the data in the .sql files in the /sql/notes folder.  I was able to answer 2 questions at a time with each query.  The SQL I used to get the answers is in answers.sql.
 
@@ -58,5 +58,14 @@ Note: The most recent user creation date was 2021-02-12, so I used that as the b
 |----------------|------------|----------------------|--------------------|
 | PEPSI         | 88432.81   | SARGENTO             | 45                 |
 
+## 3. Data Quality
+
+There were lots of minor data quality issues I found: NULL values, duplicates, running totals not matching with explicit totals, almost all users coming from one state, etc. You can see what I was looking for in the /sql/notes folder.
+
+For the purposes of this question though, I want to focus on what I consider to be the major key data quality issue: **reliably connecting receipts to brands.** 
+
+Highlighted in data_quality.sql, we are missing or not matching on key data points that would allow us to unlock the real value of this data. Almost all of receipt items fail to link to a brand due to missing or inconsistent barcode data. This means that brand-level insights—like tracking spend per brand or measuring customer loyalty—will be incomplete. 
+
+Based on the questions from Section 2 and what I implicitly perceive to be the real marketable value of data like this, we need to find a way to reliably connect users’ receipt data with brands—this is what advertisers and clients would want. If increasing the integrity of the connecting data points is not possible, an AI-driven approach (such as text-matching rewards_group to brand_code) could be a way forward.
 
 
