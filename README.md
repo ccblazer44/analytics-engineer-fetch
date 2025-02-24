@@ -3,7 +3,7 @@
 I loaded the data into PostgreSQL using Python, then did all the work in SQL.
 
 ## 1. Data Diagram
-Notes: I split receipt_items out into its own table.  I included all the columns available in the JSON.
+Notes: I split receipt_items out into its own table.  I included all the columns available in the JSON.  Diagram was made using draw.io.
 
 The following diagram represents the structured relational data model designed based on the unstructured JSON data.
 
