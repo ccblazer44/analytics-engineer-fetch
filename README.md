@@ -71,9 +71,6 @@ Based on the questions from Section 2 and what I implicitly perceive to be the r
 
 ## 4. Communicate with Stakeholders
 
-
-## 4. Communicating with Stakeholders
-
 **Subject:** Key Data Quality Issue - Receipt to Brand Matching  
 
 Hi [STAKEHOLDER],  
